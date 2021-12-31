@@ -9,17 +9,14 @@ const initialState = {
 };
 
 const filtersReducer = (state = initialState, action) => {
-  console.log(state);
-  console.log(action.payload);
-  console.log(action);
-  switch (action.payload) {
+  switch (action.type) {
     case "FILTERS_STATUS_FILTER_CHANGED": {
       return {
         ...state,
         status: action.payload,
       };
     }
-    
+
     case "FITLERS_COLOR_FILTER_CHANGED": {
       let { color, changeType } = action.payload;
       const { colors } = state;

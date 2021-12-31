@@ -2,17 +2,15 @@ import React from "react";
 import { ReactComponent as TimesSolid } from "./times-solid.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { availableColors, capitalize } from "../filters.feature/filters.colors";
-
-const selectToDoById = (state, todoId) => {
-  return state.todos.find((todo) => todo.id === todoId);
-};
+// import { selectToDoById } from "./todoSlice";
 const ToDoListItem = ({ id }) => {
   const todo = useSelector((state) => {
-    return selectToDoById(state, id);
+    return state.todos.find((todo) => {
+      return todo.id === id;
+    });
   });
   const { text, completed, color } = todo;
   const dispatch = useDispatch();
-
   const colorOptions = availableColors.map((c) => (
     <option key={c} value={c}>
       {capitalize(c)}

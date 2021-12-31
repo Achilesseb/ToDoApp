@@ -1,26 +1,25 @@
 export const StatusFilters = {
   All: "all",
-  status: "active",
-  completed: "completed",
+  Active: "active",
+  Completed: "completed",
 };
 const initialState = {
-  status: StatusFilters.All,
   colors: [],
+  status: StatusFilters.All,
 };
 
 const filtersReducer = (state = initialState, action) => {
+  console.log(state);
+  console.log(action.payload);
+  console.log(action);
   switch (action.payload) {
     case "FILTERS_STATUS_FILTER_CHANGED": {
       return {
         ...state,
-        filters: [
-          ...state.filters,
-          {
-            status: action.payload,
-          },
-        ],
+        status: action.payload,
       };
     }
+    
     case "FITLERS_COLOR_FILTER_CHANGED": {
       let { color, changeType } = action.payload;
       const { colors } = state;

@@ -2,23 +2,22 @@ import logo from "./logo.svg";
 import "./App.css";
 import ToDoList from "./features/todo.feature/todoList";
 import Header from "./features/header.feature/header.feature";
+import Footer from "./features/footer.feature/footer.feature";
 
 function App() {
   return (
     <div className="App">
       <nav>
-        {/* <header className="App-header"> */}
         <img src={logo} className="App-logo" alt="logo" />
-        <p>TO DO APP 📝</p>
-        {/* </header> */}
+        <p>TO DO LIST </p>
+        <p>📝</p>
       </nav>
       <main>
         <section className="medium-container">
-          <h2>TODOS</h2>
           <div className="todoapp">
             <Header />
             <ToDoList />
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </section>
       </main>

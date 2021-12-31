@@ -1,5 +1,3 @@
-import { act } from "react-dom/cjs/react-dom-test-utils.production.min";
-
 const initialState = [];
 function nextToDoId(todos) {
   const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);

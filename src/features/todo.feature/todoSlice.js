@@ -71,16 +71,18 @@ export const selectFilteredTodos = createSelector(
   selectToDos,
   (state) => state.filters,
   (todos, filters) => {
-    const { status } = filters;
+    const { status, colors } = filters;
     const showAllCompletions = status === StatusFilters.All;
-    if (showAllCompletions) {
+    if (showAllCompletions && colors.length === 0) {
       return todos;
     }
     const completedStatus = status === StatusFilters.Completed;
     return todos.filter((todo) => {
       const statusMatches =
         showAllCompletions || todo.completed === completedStatus;
-      return statusMatches;
+      const colorMatches = colors.length === 0 || colors.includes(todo.color);
+      console.log(colorMatches, statusMatches);
+      return statusMatches && colorMatches;
     });
   }
 );

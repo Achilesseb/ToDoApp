@@ -27,7 +27,7 @@ const filtersReducer = (state = initialState, action) => {
           }
           return {
             ...state,
-            colors: state.colors.concat(colors),
+            colors: state.colors.concat(color),
           };
         }
         case "REMOVED": {

@@ -14,11 +14,9 @@ const RemainingTodos = ({ count }) => {
 };
 
 const StatusFilter = ({ value: status, onChange }) => {
-  console.log(status);
   const renderedFilters = Object.keys(StatusFilters).map((key) => {
     const value = StatusFilters[key];
     const handleClick = () => onChange(value);
-    console.log(value);
     const className = value === status ? "selected" : "";
 
     return (
@@ -39,10 +37,8 @@ const StatusFilter = ({ value: status, onChange }) => {
 };
 
 const ColorFilters = ({ value: colors, onChange }) => {
-  console.log(colors);
   const renderColors = availableColors.map((color) => {
     const checked = colors.includes(color);
-    console.log(checked);
     const handleChange = () => {
       const changeType = checked ? "REMOVED" : "ADDED";
       onChange(color, changeType);
@@ -69,10 +65,7 @@ const ColorFilters = ({ value: colors, onChange }) => {
 };
 const Footer = () => {
   const dispatch = useDispatch();
-  const { status, colors } = useSelector((state) => {
-    console.log(state);
-    return state.filters;
-  });
+  const { status, colors } = useSelector((state) => state.filters);
   const todosRemaining = useSelector((state) => {
     const uncompeltedTodos = state.todos.filter((todo) => !todo.completed);
 

@@ -1,8 +1,13 @@
 import React from "react";
 import { ReactComponent as TimesSolid } from "./times-solid.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { availableColors, capitalize } from "../filters.feature/filters.colors";
-// import { selectToDoById } from "./todoSlice";
+import {
+  availableColors,
+  capitalize,
+} from "../../filters.feature/filters.colors";
+
+import "./todoListItems.feature.styles.scss";
+
 const ToDoListItem = ({ id }) => {
   const todo = useSelector((state) => {
     return state.todos.find((todo) => {

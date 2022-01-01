@@ -1,0 +1,34 @@
+.todoapp section.todo-list {
+  margin: 0;
+}
+
+.toggle-all:checked + label:before {
+  color: #737373;
+}
+
+.todo-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 50vh;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+ul.todo-list {
+  list-style: none;
+}
+
+.todo-list li {
+  position: relative;
+  font-size: 22px;
+  border-bottom: 1px solid #ededed;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+

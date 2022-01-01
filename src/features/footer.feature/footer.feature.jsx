@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { availableColors, capitalize } from "../filters.feature/filters.colors";
 import { StatusFilters } from "../filters.feature/filtersSlice";
 
+import "./footer.feature.styles.scss";
+
 const RemainingTodos = ({ count }) => {
   const suffix = count === 1 ? "" : "s";
   return (

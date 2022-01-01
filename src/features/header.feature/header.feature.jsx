@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
+import "./header.feature.styles.scss";
+
 const Header = () => {
   const [text, setText] = useState("");
   const dispatch = useDispatch();

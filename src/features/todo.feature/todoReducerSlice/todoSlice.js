@@ -1,4 +1,4 @@
-import { StatusFilters } from "../filters.feature/filtersSlice";
+import { StatusFilters } from "../../filters.feature/filtersSlice";
 import { createSelector } from "reselect";
 
 const initialState = [];

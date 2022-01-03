@@ -51,8 +51,6 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Navbar */
-
 .App {
   height: 100%;
   display: flex;
@@ -61,8 +59,7 @@ button {
 
 nav {
   display: flex;
-  justify-content: center;
-  padding: 0;
+  justify-content: space-evenly;
   max-width: 100%;
   text-align: center;
   align-items: center;
